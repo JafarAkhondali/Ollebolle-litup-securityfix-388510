@@ -1,0 +1,46 @@
+<div class="main-view content scroll">
+  <div class="onOffs horizontal-scroller">
+    <ul style="height:100%;width:{{ brands.length * 150 }}px;" ng-if="lampUnits.onOffs.length != 0">
+
+      <li class="onOff" ng-repeat="lamp in lampUnits.onOffs" ng-click="switchLamp(lamp.id, lamp.status.name, $index)">
+
+        <div class="switch" ng-class="lamp.status.name === 'ON' ? 'on' : 'off'">
+          <span class="handle"></span>
+        </div>
+        <!-- <i class="icon" ng-class="lamp.status.name != 'OFF' ? 'ion-ios-lightbulb' : 'ion-ios-lightbulb-outline'"></i> -->
+        <p ng-bind="lamp.name"></p>
+
+      </li>  
+
+    </ul>
+  </div>
+
+  <div class="dimmers padding">
+    <!-- Repeat dimmer devices as material range sliders -->
+    <div ng-repeat="lamp in lampUnits.dimmers" 
+      class="range-slider fader" 
+      ng-if="lampUnits.dimmers.length != 0">
+
+      <p class="rangeHeader">{{lamp.name}}</p>
+
+      <div class="maSlider">
+
+        <i class="icon ion-ios-sunny-outline" ng-click="changeDimmer(lamp.id, 0)"></i>
+
+        <md-slider
+          step="15" min="0" max="255" aria-label="rating"
+          ng-model="lamp.status.level"
+          hm-panend="changeDimmer(lamp.id, lamp.status.level)"
+          hm-tap="changeDimmer(lamp.id, lamp.status.level)"
+          hm-manager-options='{"enabled":true,"preventGhosts":true}'>
+        </md-slider>
+
+        <i class="icon ion-ios-sunny" ng-click="changeDimmer(lamp.id, 255)"></i>
+
+      </div>
+      
+    </div>
+  </div>
+
+
+</div>

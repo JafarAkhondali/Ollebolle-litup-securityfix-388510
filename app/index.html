@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="hemauto" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Hemauto</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/app.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100,700' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <link href='http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/node_modules/angular-material/angular-material.css">
+
+</head>
+<body>
+
+  <side-menu></side-menu>
+
+  <div class="viewer">
+    <div ng-view class="view"></div>
+  </div>
+
+  <div class="mobile-menu" ng-controller="sideMenuCtrl">
+    <div class="option slide-from-bottom" ng-if="showMobileMenu" ng-repeat="item in menuItems" ng-click="clickItem(item.url, 'mobile')">
+      <i class="icon" ng-class="item.icon"></i>
+      <span>{{ item.text }}</span>
+    </div>
+    <div class="toggle" ng-click="toggleMobileMenu()">
+      <svg width="50px" height="50px" viewport="50 50 50 50">
+        <path d="M15.0684163,18.4030654 C15.0684163,18.4030654 36.4474738,18.4030653 36.4474744,18.4030654 C48.2162073,18.4030654 39.6731636,2.5 25.7704451,2.5 C11.8677267,2.5 13.6002603,15.5969343 20.3887481,21 C20.3887481,21 32.3270961,31.1929834 32.9460431,32" ng-class="showMobileMenu ? 'top-active' : 'top-inactive'"></path>
+        <line x1="15" x2="35" y1="25" y2="25" ng-class="showMobileMenu ? 'middle-active' : 'middle-inactive'" />
+        <path d="M15.0684163,33.4030654 C15.0684163,33.4030654 36.4474738,33.4030653 36.4474744,33.4030654 C48.2162073,33.4030654 39.6731636,17.5 25.7704451,17.5 C11.8677267,17.5 13.6002603,30.5969343 20.3887481,36 C20.3887481,36 32.3270961,46.1929834 32.9460431,47" ng-class="showMobileMenu ? 'top-active' : 'top-inactive'" transform="translate(28.534208, 32.250000) scale(-1, 1) rotate(-180.000000) translate(-28.534208, -32.250000)"></path>
+      </svg>
+    </div>
+  </div>
+
+  <script src="/lib/angular.min.js"></script>
+  <script src="/node_modules/angular-route/angular-route.js"></script>
+  <script src="/node_modules/angular-aria/angular-aria.js"></script> 
+  <script src="/node_modules/angular-material/angular-material.js"></script>
+  <script src="lib/angular-animate.min.js"></script>
+  <script src="lib/hammer.min.js"></script>
+  <script src="lib/hammer-time.min.js"></script>
+  <script src="/node_modules/angular-hammer/angular.hammer.min.js"></script>
+  <!-- <script src="lib/angular-material.min.js"></script> -->
+  <!-- <link href="lib/angular-material.css" rel="stylesheet"> -->
+  <!-- <script src="lib/angular-aria.min.js"></script> -->
+  <script src="lib/socket.min.js"></script>
+  <script src="lib/socket.io.js"></script>
+
+  <script src="js/app.js"></script>
+  <script src="js/controllerBase.js"></script>
+  <script src="js/controllers/sideMenuCtrl.js"></script>
+  <script src="js/controllers/mainCtrl.js"></script>
+  <script src="js/controllers/addUnitCtrl.js"></script>
+  <script src="js/controllers/configCtrl.js"></script>
+  <script src="js/servicesBase.js"></script>
+  <script src="js/services/socketService.js"></script>
+  <script src="js/directivesBase.js"></script>
+  <script src="js/directives/sideMenu.js"></script>
+  <script src="js/directives/popup.js"></script>
+
+</body>
+</html>

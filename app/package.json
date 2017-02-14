@@ -1,0 +1,26 @@
+{
+  "name": "vakaportal",
+  "version": "1.0.0",
+  "description": "test",
+  "scripts": {
+    "dev": "lite-server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "",
+  "repository": {},
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-sass": "^1.1.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-contrib-cssmin": "^1.0.1"
+  },
+  "dependencies": {
+    "angular": "^1.5.5",
+    "angular-animate": "^1.5.8",
+    "angular-aria": "^1.5.8",
+    "angular-hammer": "^2.2.0",
+    "angular-material": "^1.1.1",
+    "angular-route": "^1.5.3"
+  }
+}

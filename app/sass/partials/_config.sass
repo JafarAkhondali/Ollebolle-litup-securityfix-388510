@@ -1,0 +1,49 @@
+$item_height: 40px
+.config-item
+  position: relative
+  width: 100%
+  height: $item_height
+  border-bottom: 1px solid $border
+  // background: #ccc
+  // margin-bottom: $padding
+  +flexContainer
+  i
+    +flexHold
+    +flexCenter
+    width: $item_height
+    cursor: pointer
+    font-size: 20px
+    +transitionBounce(.2s)
+    &:hover
+      color: $accent
+  .up:hover
+    +transform(translateY(-2px))
+  .down:hover
+    +transform(translateY(2px))
+  .trash:hover
+    +transform(scale(1.1))
+  p
+    line-height: $item_height
+    +flexThis
+  .lamp
+    color: $accent
+  .confirm
+    position: absolute
+    top: 0
+    right: 0
+    width: auto
+    height: 100%
+    background: $bg
+    span
+      display: inline-block
+      height: 100%
+      line-height: $item_height
+      font-size: $small_text
+    button
+      display: inline-block
+      height: 100%
+      margin: 0 !important
+.delete-inactive
+  +transform(translateX(0))
+.delete-active
+  +transform(translateX(-50px))

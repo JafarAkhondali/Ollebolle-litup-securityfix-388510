@@ -1,0 +1,4 @@
+<ul class="side-menu">
+  <li class="logo"><img src="assets/img/logo.svg"></li>
+  <li ng-repeat="item in menuItems" ng-click="clickItem(item.link)"><i class="icon" ng-class="item.icon"></i><p ng-bind="item.text"></p></li>
+</ul>

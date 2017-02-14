@@ -1,0 +1,13 @@
+.loader
+  width: 14px
+  height: 14px
+  @include animation('rotate .5s infinite');
+  @include keyframes(rotate)
+    0% 
+      +transform(rotate(0))
+    100%
+      +transform(rotate(359deg))
+  circle
+    fill: transparent
+    stroke: $accent
+    stroke-dasharray: 8

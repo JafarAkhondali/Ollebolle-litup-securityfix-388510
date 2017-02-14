@@ -1,0 +1,30 @@
+.onOffs
+  position: relative
+  width: 120px
+  height: 100%
+  border-right: 1px solid $border
+  .onOff
+    position: relative
+    width: 120px
+    height: 120px
+    text-align: center
+    border-bottom: 1px solid $border
+    +flexCenter
+    i
+      color: $accent
+      +transition(.2s)
+      font-size: 40px
+    p
+      width: 100%
+      margin-top: 5px
+      +transition(.2s)
+    &:hover
+      i
+        +transform(rotate(10deg))
+      h1
+        +transform(translateY(-2px))
+    &:active
+      i
+        +transform(scale(0.9))
+      h1
+        +transform(scale(0.9))

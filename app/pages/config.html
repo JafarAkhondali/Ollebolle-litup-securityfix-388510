@@ -1,0 +1,47 @@
+<div class="content padding">
+
+  <md-input-container class="full-width">
+    <label>Server URL</label>
+      <input ng-model="serverURL" required>
+      <button ng-click="saveServerURL(serverURL)">Save</button>
+  </md-input-container>
+
+  <h1>Switch lamps</h1>
+
+  <div class="config-item"
+    ng-repeat="lamp in lampUnits.onOffs" 
+    ng-click="switchLamp(lamp.id, lamp.status.name)">
+
+    <i class="icon lamp" ng-class="lamp.status.name != 'OFF' ? 'ion-ios-lightbulb' : 'ion-ios-lightbulb-outline'"></i>
+    <p ng-bind="lamp.name"></p>
+    <i class="icon setting up ion-ios-arrow-up"></i>
+    <i class="icon setting down ion-ios-arrow-down"></i>
+    <i class="icon setting trash ion-ios-trash-outline" ng-click="toggleDelete('onOffs', $index)"></i>
+    <div class="confirm slide-from-right" ng-if="lamp.delete">
+      <span>Delete?</span>
+      <button ng-click="delete(lamp.id)">Yes</button>
+      <button ng-click="toggleDelete('onOffs', $index)" class="red">No</button>
+    </div>
+
+  </div>
+
+  <h1>Dimmer lamps</h1>
+
+  <div class="config-item" 
+    ng-repeat="lamp in lampUnits.dimmers" 
+    ng-click="switchLamp(lamp.id, lamp.status.name)">
+    
+    <i class="icon ion-ios-color-wand-outline"></i>
+    <p ng-bind="lamp.name"></p>
+    <i class="icon setting up ion-ios-arrow-up"></i>
+    <i class="icon setting down ion-ios-arrow-down"></i>
+    <i class="icon setting trash ion-ios-trash-outline" ng-click="toggleDelete('dimmers', $index)"></i>
+    <div class="confirm slide-from-right" ng-if="lamp.delete">
+      <span>Delete?</span>
+      <button ng-click="delete(lamp.id)">Yes</button>
+      <button ng-click="toggleDelete('dimmers', $index)" class="red">No</button>
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,47 @@
+.main-view
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  .horizontal-scroller
+    height: 120px
+    li
+      width: 150px
+  .dimmers
+    +flexThis
+    padding-top: 2 * $padding
+  .switch
+    margin-top: 5px
+    margin-bottom: 5px
+    position: relative
+    display: inline-block
+    width: 60px
+    height: 30px
+    background: none
+    border-radius: 2px
+    margin-bottom: 15px
+    background: $border
+    cursor: pointer
+    +transition(.2s)
+    .handle 
+      +flexCenter
+      +transition(.3s)
+      position: absolute
+      bottom: 2px
+      left: 2px
+      width: 28px
+      height: 26px
+      border-radius: 1px
+      background-color: $bg
+      color: $main_text
+      font-size: 40px
+    &.on
+      background: $side_bg
+      .handle 
+        color: $accent
+        background-color: $accent
+        -webkit-transform: translateX(100%)
+        transform: translateX(100%)
+    &.off
+

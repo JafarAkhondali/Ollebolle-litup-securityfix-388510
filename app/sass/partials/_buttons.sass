@@ -1,0 +1,30 @@
+button
+  position: relative
+  border: none
+  background: $accent2
+  color: $bg
+  font-size: 12px !important
+  text-transform: uppercase
+  padding: 10px 15px
+  +transition(.1s)
+  &:hover
+    background: $accent
+  &.empty
+    background: transparent
+    color: $main_text
+    &:hover
+      background: rgba($main_text, .05)
+  &.red
+    background: $red
+    color: $bg
+    &:hover
+      background: darken($red, 10%)
+
+.button-row
+  position: relative
+  width: 100%
+  height: auto
+  text-align: center
+  padding: $padding
+  button
+    display: inline-block

@@ -1,0 +1,86 @@
+<div class="content padding scroll">
+
+<div class="header-icon">
+  <i class="icon ion-ios-plus-empty"></i>
+  <span>Add device</span>
+</div>
+
+  <md-input-container class="full-width">
+    <label>Name</label>
+      <input ng-model="newUnit.name" required>
+
+    <div ng-messages="newUnit.name.$error">
+      <div ng-message="required" class="my-message">You must enter a name for the device.</div>
+    </div>
+  </md-input-container>
+
+  <md-input-container class="full-width">
+    <label>Brand</label>
+    <md-select ng-model="pickedBrand">
+      <md-option ng-repeat="brand in brands track by $index" value="{{brand}}">
+        {{brand.brand}}
+      </md-option>
+    </md-select>
+  </md-input-container>
+
+  <md-input-container class="full-width" ng-show="models">
+    <label>Type</label>
+    <md-select ng-model="pickedModel">
+      <md-option ng-repeat="model in models track by $index" value="{{model}}">
+        {{model.model}}
+      </md-option>
+    </md-select>
+  </md-input-container>
+
+  <!-- <input placeholder="Device name" ng-model="newUnit.name" /> -->
+
+  <!-- <h1>Pick brand</h1>
+  <div class="horizontal-scroller border-top">
+    <ul style="height:100%;width:{{ brands.length * 100 }}px;">
+      <li 
+        class="brand" 
+        ng-class="activeBrand === $index ? 'active' : 'inactive'"
+        ng-repeat="brand in brands" 
+        ng-click="pickBrand($index, brand.protocol)"
+      >
+        {{brand.brand}}
+      </li>
+    </ul>
+  </div>
+
+  <h1 class="fade" ng-if="models">Pick type of receiver</h1>
+  <div class="horizontal-scroller border-top fade" ng-if="models">
+    <ul style="height:100%;width:{{ models.length * 120 }}px;">
+      <li 
+        ng-class="activeModel === $index ? 'active' : 'inactive'"
+        ng-repeat="model in models" 
+        ng-click="pickModel(model.protocol, model.model, $index)"
+      >
+        <i class="icon ion-ios-toggle-outline" ng-if="model.model === 'codeswitch'"></i>
+        <i class="icon ion-ios-bell-outline" ng-if="model.model === 'bell'"></i>
+        <i class="icon ion-ios-cloud-outline" ng-if="model.model === 'selflearning-switch' || model.model === 'selflearning-dimmer'"></i>
+        {{model.modelPretty}}
+      </li>
+    </ul>
+  </div> -->
+
+
+  <div class="codeSwitches" ng-if="newUnit.codeSwitch">
+    <h1 class="center">Enter code</h1>
+
+      <label class="codeSwitch" ng-repeat="switch in newUnit.codeSwitch track by $index">
+        <input type="checkbox" ng-model="switch.state">
+        <span class="hole"></span>
+          <span class="switch">
+          </span>
+      </label>
+      
+  </div>
+
+  <div class="button-row">
+    <button ng-click="addDevice()" ng-if="newUnit.type">Add device</button>
+  </div>
+
+  <pre>{{ newUnit | json }}</pre>
+
+</div>

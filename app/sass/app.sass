@@ -1,0 +1,131 @@
+@import 'partials/mixins'
+@import 'partials/parameters'
+@import 'partials/animations'
+@import 'partials/mediaQueries'
+@import 'partials/sideMenu'
+@import 'partials/mobileMenu'
+@import 'partials/main'
+@import 'partials/rangeSlider'
+@import 'partials/onOffs'
+@import 'partials/horizontalScroller'
+@import 'partials/codeSwitches'
+@import 'partials/buttons'
+@import 'partials/popups'
+@import 'partials/config'
+@import 'partials/loader'
+@import 'partials/material'
+@import 'partials/addUnit'
+
+body
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  padding: 0
+  margin: 0
+  +flexContainer
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 2px
+
+::-webkit-scrollbar
+  display: none
+
+h1, h2, h3, h4, p, span, ul, li, button, input
+  display: block
+  margin: 0
+  font-family: 'Raleway', sans-serif
+  letter-spacing: 2px
+  text-transform: uppercase
+
+h1, h2, h3, h4, p, span, ul, li
+  color: $main_text
+  line-height: 1.5
+
+h1
+  font-size: 16px
+  letter-spacing: 4px
+  margin: 4 * $padding 0 $padding 0
+  &:first-child
+    margin: $padding 0
+
+p
+  font-size: $medium_text
+
+.center
+  text-align: center
+
+*
+  box-sizing: border-box
+  -webkit-box-sizing: border-box
+  &:focus
+    outline: none
+    -webkit-outline: none
+
+.scroll
+  overflow-y: auto
+  -webkit-overflow-scrolling: touch
+
+.padding
+  padding: $padding
+
+.viewer
+  +flexThis
+  position: relative
+
+.view, .content
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+
+.content
+  background: $bg
+
+ul, li
+  display: block
+  list-style-type: none
+  margin: 0
+  padding: 0
+
+// input
+//   width: 100%
+//   height: 40px
+//   border: none
+//   border-bottom: 1px solid $border
+//   background: transparent
+//   color: $main_text !important
+//   padding: 15px
+//   font-size: 12px
+//   -webkit-appearance: none
+//   margin: $padding 0
+//   +transition(.2s)
+//   &::-webkit-input-placeholder
+//     color: $inactive_text !important
+//   &:-moz-placeholder
+//     color: $inactive_text !important
+//   &::-moz-placeholder
+//     color: $inactive_text !important
+//   &:-ms-input-placeholder
+//     color: $inactive_text !important
+//     font-size: 12px
+//   &:focus
+//     outline: none
+//     border-bottom-color: $main_text
+//   &.ng-not-empty
+//     border-bottom-color: $accent
+
+.full-width
+  width: 100%
+
+.half-width
+  width: 50%
+
+.inline
+  display: inline-block
+
+.flex-row
+  position: relative
+  width: 100%
+  +flexContainer

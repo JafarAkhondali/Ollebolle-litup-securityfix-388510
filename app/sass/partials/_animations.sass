@@ -1,0 +1,70 @@
+.view.ng-enter
+  +transform(translateY(10px))
+  opacity: 0
+  -webkit-transition: all cubic-bezier(0.4, 0.6, 0.2, 1) 400ms
+  transition: all cubic-bezier(0.4, 0.6, 0.2, 1) 400ms
+
+.view.ng-enter.ng-enter-active
+  +transform(translateY(0))
+  opacity: 1
+
+.view.ng-leave
+  +transform(translateY(0))
+  opacity: 1
+  -webkit-transition: all cubic-bezier(0.4, 0.6, 0.2, 1) 400ms
+  transition: all cubic-bezier(0.4, 0.6, 0.2, 1) 400ms
+
+.view.ng-leave.ng-leave-active
+  +transform(translateY(10px))
+  opacity: 0
+
+.slide-from-right.ng-enter
+  +transform(translateX(50px))
+  opacity: 0
+  +transition(.2s)
+
+.slide-from-right.ng-enter.ng-enter-active
+  +transform(translateX(0))
+  opacity: 1
+
+.slide-from-right.ng-leave
+  +transform(translateX(0))
+  opacity: 1
+  +transition(.2s)
+
+.slide-from-right.ng-leave.ng-leave-active
+  +transform(translateX(50px))
+  opacity: 0
+
+.slide-from-bottom.ng-enter
+  +transform(translateY(50px))
+  opacity: 0
+  +transition(.2s)
+
+.slide-from-bottom.ng-enter.ng-enter-active
+  +transform(translateY(0))
+  opacity: 1
+
+.slide-from-bottom.ng-leave
+  +transform(translateY(0))
+  opacity: 1
+  +transition(.2s)
+
+.slide-from-bottom.ng-leave.ng-leave-active
+  +transform(translateY(50px))
+  opacity: 0
+
+
+.fade.ng-enter
+  opacity: 0
+  +transition(.2s)
+
+.fade.ng-enter.ng-enter-active
+  opacity: 1
+
+.fade.ng-leave
+  opacity: 1
+  +transition(.2s)
+
+.fade.ng-leave.ng-leave-active
+  opacity: 0

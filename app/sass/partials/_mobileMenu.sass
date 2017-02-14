@@ -1,0 +1,70 @@
+$menu_size: 50px
+
+.mobile-menu
+  position: fixed
+  bottom: $padding
+  right: $padding
+  width: $menu_size
+  height: auto
+  display: none
+  .toggle
+    position: relative
+    width: $menu_size
+    height: $menu_size
+    background: $accent
+    border-radius: 50%
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26)
+    svg
+      position: absolute
+      top: 0
+      left: 0
+      width: $menu_size
+      height: $menu_size
+    path
+      stroke-width: 2px
+      stroke: $bg
+      fill: none
+      +transition(.6s)
+    .top-active
+      stroke-dasharray: 25 80
+      stroke-dashoffset: -73
+    .top-inactive
+      stroke-dasharray: 80
+      stroke-dashoffset: 60
+    line
+      stroke-width: 2px
+      stroke: $bg
+      +transition(.3s)
+    .middle-active
+      stroke-dasharray: 1 20
+      stroke-dashoffset: -8
+    .middle-inactive
+      stroke-dasharray: 80
+      stroke-dashoffset: 50
+  .option
+    position: relative
+    width: $menu_size
+    height: $menu_size
+    background: $border
+    border-radius: 50%
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26)
+    margin-bottom: $padding
+    i
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      +flexCenter
+      font-size: 25px
+    span
+      position: absolute
+      top: calc(50% - 11px)
+      right: calc(100% + 10px)
+      width: auto
+      height: 22px
+      background: #000
+      color: $bg
+      font-size: 12px
+      padding: 2px 5px
+      white-space: nowrap

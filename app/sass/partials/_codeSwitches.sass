@@ -1,0 +1,41 @@
+.codeSwitches
+  width: 232px
+  height: auto
+  margin: 2 * $padding auto $padding auto
+  .codeSwitch
+    margin-top: 5px
+    margin-bottom: 5px
+    position: relative
+    display: inline-block
+    width: 40px
+    height: 80px
+    background: none
+    border-radius: 2px
+    margin-left: 5px
+    background: $border
+    cursor: pointer
+    +transition(.2s)
+    & .switch 
+      +flexCenter
+      +transition(.3s)
+      position: absolute
+      bottom: 2px
+      left: 2px
+      width: 36px
+      height: 38px
+      border-radius: 1px
+      background-color: $bg
+      color: $main_text
+      font-size: 40px
+    & input 
+      display: none
+    & input:checked
+      background: $side_bg
+    & input:checked ~ .switch 
+      color: $accent
+      background-color: $accent
+      -webkit-transform: translateY(-100%)
+      transform: translateY(-100%)
+    & + input:checked
+      background: $side_bg
+    // &:hover

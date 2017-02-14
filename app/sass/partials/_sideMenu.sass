@@ -1,0 +1,37 @@
+$item_height: 50px
+
+.side-menu
+  +flexHold
+  width: 200px
+  height: 100%
+  background: $side_bg
+  .logo
+    height: auto
+    svg
+      width: 100%
+      height: 100%
+      path, rect
+        fill: transparent
+        stroke-width: 1px
+        stroke: $side_text
+  li
+    position: relative
+    width: 100%
+    height: $item_height
+    cursor: pointer
+    +transition(.2s)
+    +flexContainer
+    i, span
+      color: $side_text
+    i
+      +flexHold
+      +flexCenter
+      width: $item_height
+      height: $item_height
+      font-size: 25px
+    span
+      line-height: $item_height
+      text-transform: uppercase
+      font-size: 12px
+    &:hover
+      background: $side_hover
